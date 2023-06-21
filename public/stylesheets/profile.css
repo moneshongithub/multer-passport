@@ -1,0 +1,46 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 82.5%;
+  scroll-behavior: smooth;
+}
+
+
+
+/* .admin__submit {
+  border: none;
+  background-color: #603556;
+  padding: 0.8rem 1.5rem;
+  color: #e2e0e0;
+  border-radius: 10rem;
+  cursor: pointer;
+} */
+
+.admin__submit:focus {
+  outline: none;
+}
+
+
+#hidden{
+  display: none;
+}
+a{
+  color: black;
+  text-decoration: none;
+  
+}
+.containerr{
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+
+}
+.circle{
+  margin-bottom: 10px;
+}

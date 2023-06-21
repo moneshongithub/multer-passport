@@ -1,0 +1,22 @@
+
+<% include ./partials/header.ejs %>
+
+<link rel="stylesheet" href="alluser.css">
+
+<div class="container d-flex" style="gap:20px" >
+        <% alluser.forEach(function(elem){  %>
+
+            <div class="card" style="width: 18rem ;">
+              <img src="../images/uploads/<%=elem.image %>" class="card-img-top" width="400" height="300"  >
+              <div class="card-body">
+                <h5 class="card-title"><%= elem.username %></h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p>contact no <%= elem.number %></p>
+                <a href=  " /like/<%= elem.id %>" class="btn btn-primary"> like <%= elem.like.length %></a><br><br>
+                
+              </div>
+            </div>
+            <%  }) %>
+</div>
+
+<% include ./partials/footer.ejs %>

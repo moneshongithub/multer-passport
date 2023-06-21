@@ -1,0 +1,50 @@
+<% include ./partials/header.ejs %>
+
+<link rel="stylesheet" href="/stylesheets/profile.css">
+    
+  <div class="container">
+    <form action="/upload" enctype="multipart/form-data" method="post" id="hidden">
+      <input type="file" id="fileinp" id="myFile" name="image" />
+      <input class="admin__submit" type="submit" />
+    </form>
+  </div>
+
+
+  <!-- <div class="card" style="width: 20rem; ">
+    <img id="image" src="../images/uploads/<%= user.image %>" class="card-img-top" width="400" height="300"  >
+    <div class="card-body">
+      <h5 class="card-title"><%= user.username %></h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p>contact no <%= user.number %></p>
+      <a href=  " /like/<%= user.id %>" class="btn btn-primary"> like <%= user.like.length %></a><br><br>
+      <a href="/logout">logout</a>
+      
+    </div>
+  </div> -->
+
+
+  <div class="containerr justify-content-center" style="width: 20rem; height: 20rem">
+    <div class="circle" style="overflow: hidden; height: 8rem; border-radius: 50%; width: 8rem;">
+      <img style="width: 100%; height: 100%; object-fit: cover;" src="../images/uploads/<%= user.image %>" alt="..."> 
+       
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= user.username %></h5>
+        <p class="card-text"> <%= user.email %></p>
+        <p>contact no <%= user.number %></p>
+        <a href="/like/<%= user._id %>" class="btn btn-primary" style=" font-family: gilroy; letter-spacing: 2px; padding: 4px 40px; text-align: center; "> <i class="ri-thumb-up-line" style="padding-left: 10px;"></i>Liked by <%= user.like.length %></a>
+        <a class="btn btn-primary" href="/logout">Logout</a>
+      </div>
+  </div>
+
+    <script>
+      var circ = document.querySelector(".circle")
+      circ.addEventListener("click", function(){
+        document.querySelector("#fileinp").click();
+      })
+      document.querySelector("#fileinp").addEventListener("change", function(){
+        document.querySelector('#hidden').submit();
+      })
+    </script>
+
+  <% include ./partials/footer.ejs %>
